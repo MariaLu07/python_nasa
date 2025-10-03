@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Início | NASA Missões</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --primary: #1976D2;
+  --secondary: #FF6F61;
+  --accent: #FFD700;
+  --dark: #0B0D17;
+  --light: #F8FAFC;
+  --text-dark: #020617;
+  --text-light: #f1f5f9;
+  --card: #1e293b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+  background-color: var(--light);
+  color: var(--text-dark);
+}
+
+.navbar {
+  background-color: var(--card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  color: var(--text-light);
+  border-bottom: 1px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar img { height: 50px; }
+.navbar .logo-text { font-weight: bold; color: var(--primary); font-size: 22px; margin-left: 10px; }
+
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 100px 20px 50px;
+  text-align: center;
+}
+
+main h1 { font-size: 2rem; margin-bottom: 10px; }
+main p { font-size: 1.1rem; margin-bottom: 30px; }
+
+.card {
+  background-color: var(--card);
+  padding: 20px;
+  border-radius: 18px;
+  width: 240px; /* tamanho menor e responsivo */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transition: transform 0.2s;
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+body.light-mode .card { background-color: #e3e8ef; color: var(--text-dark); }
+.card:hover { transform: translateY(-7px); }
+
+.card i { font-size: 28px; margin-bottom: 12px; display: block; }
+.card img { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 12px; }
+.card h3 { font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+.card p { font-size: 14px; }
+
+/* Grid geral */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Grid para linha de 2 cards centralizados */
+.grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 240px);
+  gap: 25px;
+  justify-content: center; /* centraliza os dois cards */
+  margin-top: 20px;
+}
+
+footer {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer a { color: #BBDEFB; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <div style="display: flex; align-items: center">
+    <img src="nasa_logo.png" alt="Logo NASA">
+    <span class="logo-text">NASA Missões</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px">
+    <a href="configuracoes.html" class="settings-btn" title="Configurações">
+      <i class="fas fa-cog"></i>
+    </a>
+    <label for="themeSwitch">Modo Claro</label>
+    <input id="themeSwitch" type="checkbox" class="toggle-theme">
+  </div>
+</header>
+
+<main>
+  <h1>🚀 Bem-vindo(a) ao Sistema NASA Missões</h1>
+  <p>Gerencie missões, astros, equipes e publicações científicas em um só lugar.</p>
+
+  <!-- Cards principais -->
+  <div class="grid">
+    <a href="missoes.html" class="card">
+      <i class="fas fa-rocket" style="color: var(--secondary);"></i>
+      <h3>Missões</h3>
+      <p>Cadastre, consulte e acompanhe missões espaciais.</p>
+    </a>
+    <a href="astros.html" class="card">
+      <i class="fas fa-globe" style="color: var(--primary);"></i>
+      <h3>Astros</h3>
+      <p>Explore astros e registre suas características.</p>
+    </a>
+    <a href="equipes.html" class="card">
+      <i class="fas fa-users" style="color: var(--accent);"></i>
+      <h3>Equipes</h3>
+      <p>Gerencie equipes e seus participantes.</p>
+    </a>
+    <a href="instrumentos.html" class="card">
+      <i class="fas fa-microchip" style="color: var(--secondary);"></i>
+      <h3>Instrumentos</h3>
+      <p>Cadastre os instrumentos usados em missões.</p>
+    </a>
+  </div>
+
+  <!-- Linha de 2 cards centralizados -->
+  <div class="grid-two">
+    <a href="publicacoes.html" class="card">
+      <i class="fas fa-book" style="color: var(--primary);"></i>
+      <h3>Publicações</h3>
+      <p>Organize artigos e pesquisas vinculados às missões.</p>
+    </a>
+    <a href="login.html" class="card">
+      <i class="fas fa-user-astronaut" style="color: var(--accent);"></i>
+      <h3>Usuários</h3>
+      <p>Login, cadastro e gerenciamento de perfis.</p>
+    </a>
+  </div>
+
+  <!-- Exemplos de publicações -->
+  <div class="examples" style="margin-top: 60px;">
+    <h2 style="color: var(--primary); margin-bottom: 20px;">Exemplos de Publicações de Missões</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="artemis1.jpg" alt="Artemis I">
+        <h3>Artemis I</h3>
+        <p>Relatório detalhado sobre testes de lançamento e sistemas de suporte da missão Artemis I.</p>
+      </div>
+      <div class="card">
+        <img src="bennu.jpg" alt="Asteroide Bennu">
+        <h3>Asteroide Bennu</h3>
+        <p>Coleta de amostras e análise química do asteroide Bennu.</p>
+      </div>
+      <div class="card">
+        <img src="perseverance.jpg" alt="Mars Rover Perseverance">
+        <h3>Mars Rover Perseverance</h3>
+        <p>Descobertas geológicas e atmosféricas em Marte.</p>
+      </div>
+      <div class="card">
+        <img src="jwst.jpg" alt="Telescópio James Webb">
+        <h3>Telescópio James Webb</h3>
+        <p>Pesquisas sobre exoplanetas e formação estelar a partir das imagens do JWST.</p>
+      </div>
+      <div class="card">
+        <img src="iss.jpg" alt="Experimentos ISS">
+        <h3>Experimentos ISS</h3>
+        <p>Resultados de experimentos científicos em gravidade zero na Estação Espacial Internacional.</p>
+      </div>
+      <div class="card">
+        <img src="tecnologia.jpg" alt="Pesquisa Científica">
+        <h3>Pesquisa Científica</h3>
+        <p>Estudos sobre novos materiais espaciais e tecnologias de suporte à vida.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 NASA Missões. Todos os direitos reservados.</p>
+  <p>Desenvolvido para exploração e registro de dados espaciais.</p>
+</footer>
+
+<script>
+const themeSwitch = document.getElementById('themeSwitch');
+themeSwitch.addEventListener('change', () => {
+  document.body.classList.toggle('light-mode');
+});
+</script>
+</body>
+</html>
